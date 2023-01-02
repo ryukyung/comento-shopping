@@ -1,12 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import Basket from "./pages/Basket";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      project start
-    </div>
+    <BrowserRouter basename="comento-shopping">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:productId" element={<ProductDetail />} />
+        <Route path="/basket" element={<Basket />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
 export default App;
