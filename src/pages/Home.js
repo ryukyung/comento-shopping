@@ -3,7 +3,7 @@ import ThemeButton from "../components/ThemeButton.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import styled from "styled-components";
 import { mockTheme1Products, mockTheme2Products } from "../data/mockData.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const Home = () => {
   // state, 상태
   const [products, setProducts] = useState();
@@ -14,6 +14,11 @@ const Home = () => {
       setProducts(mockTheme2Products);
     }
   };
+  useEffect(() => {
+    setTimeout(() => {
+      setProducts(mockTheme1Products);
+    }, 1000);
+  }, []);
   return (
     <Cover>
       <Navigation />
