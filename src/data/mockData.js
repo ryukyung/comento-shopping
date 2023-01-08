@@ -1,4 +1,4 @@
-export const mockTheme1Produdcts = [
+export const mockTheme1Products = [
   {
     id: 1,
     price: 21800,
@@ -27,7 +27,7 @@ export const mockTheme1Produdcts = [
   },
 ];
 
-export const mockTheme2Produdcts = [
+export const mockTheme2Products = [
   {
     id: 7,
     price: 6000,
@@ -56,7 +56,7 @@ export const mockTheme2Produdcts = [
 
 // 이 부분은 Copy 해서 쓰시면 됩니다!
 export const getProductDetail = (productId) => {
-  return [...mockTheme1Produdcts, ...mockTheme2Produdcts].find((product) => {
+  return [...mockTheme1Products, ...mockTheme2Products].find((product) => {
     return product.id === Number(productId);
   });
 };
