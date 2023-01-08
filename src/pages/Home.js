@@ -2,20 +2,32 @@ import Navigation from "../components/Navigation.jsx";
 import ThemeButton from "../components/ThemeButton.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import styled from "styled-components";
-import { mockTheme1Products } from "../data/mockData.js";
+import { mockTheme1Products, mockTheme2Products } from "../data/mockData.js";
+import { useState } from "react";
 const Home = () => {
+  // state, 상태
+  const [products, setProducts] = useState();
+  const onClickThemeButton = (themeId) => {
+    if (themeId === 1) {
+      setProducts(mockTheme1Products);
+    } else {
+      setProducts(mockTheme2Products);
+    }
+  };
   return (
     <Cover>
       <Navigation />
       <ThemeSection>
-        <ThemeButton themeName={"# 겨울 방한템"} />
-        <ThemeButton themeName={"# 따순 머그컵"} />
+        <ThemeButton themeName={"# 겨울방한템"} onClick={() => onClickThemeButton(1)} />
+        <ThemeButton themeName={"# 여름엔바로"} onClick={() => onClickThemeButton(2)} />
       </ThemeSection>
       <GreyLine />
       <ProductSection>
-        {mockTheme1Products.map((product) => (
-          <ProductCard key={product.id} title={product.name} desc={product.description} thumbnail={product.thumbnail} />
-        ))}
+        {products ? (
+          products.map((product) => <ProductCard key={product.id} title={product.name} desc={product.description} thumbnail={product.thumbnail} />)
+        ) : (
+          <div>테마를 선택해주세요</div>
+        )}
       </ProductSection>
     </Cover>
   );
