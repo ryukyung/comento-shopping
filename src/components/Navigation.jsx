@@ -1,23 +1,32 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { solid} from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
+
 import styled from "styled-components";
 
-const Navigation = () => {
+const Navigation = ({ isExist }) => {
   return (
     <NavigationCoverStyled>
+      <BackPage>&lt;</BackPage>
       <NavigationStyled>코멘토 쇼핑</NavigationStyled>
     </NavigationCoverStyled>
   );
 };
 const NavigationCoverStyled = styled.div`
-  width: 100%;
+  width: calc(100% - 40px);
   height: 50px;
   display: flex;
-  justify-content: center;
-  align-item: center;
-  padding-top: 20px;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  margin-left: -40px;
+`;
+const BackPage = styled.div`
+  font-size: 18px;
+  font-weight: 700;
 `;
 const NavigationStyled = styled.div`
   font-weight: 700;
-  font-size: 38px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 16px;
 `;
 export default Navigation;
