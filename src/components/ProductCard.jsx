@@ -2,18 +2,22 @@ import styled from "styled-components";
 const ProductCard = ({ thumbnail, title, desc, onClick }) => {
   return (
     <ProductCardStyled onClick={onClick}>
-      <ProductThumbnail src={thumbnail} alt={title} />
+      <ProductThumbnail style={{ backgroundImage: `url(${thumbnail})` }} />
       <ProductTitle>{title}</ProductTitle>
       <ProductDesc>{desc}</ProductDesc>
     </ProductCardStyled>
   );
 };
+
 const ProductCardStyled = styled.div`
   padding: 50px 24px;
 `;
-const ProductThumbnail = styled.img`
+const ProductThumbnail = styled.div`
   width: 341px;
   height: 204px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 `;
 const ProductTitle = styled.div`
   padding: 12px 0px;
