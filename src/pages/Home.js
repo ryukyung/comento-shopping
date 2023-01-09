@@ -26,7 +26,7 @@ const Home = () => {
     <Cover>
       <Navigation />
       <ThemeSection>
-        <ThemeButton themeName={"# 겨울방한템"} onClick={() => onClickThemeButton(1)} />
+        <ThemeButton themeName={"# 따순머그컵"} onClick={() => onClickThemeButton(1)} />
         <ThemeButton themeName={"# 여름엔바로"} onClick={() => onClickThemeButton(2)} />
       </ThemeSection>
       <GreyLine />
