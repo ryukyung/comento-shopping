@@ -1,13 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { solid} from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
-
 import styled from "styled-components";
 
-const Navigation = ({ isExist }) => {
+const Navigation = ({ title }) => {
   return (
     <NavigationCoverStyled>
       <BackPage>&lt;</BackPage>
-      <NavigationStyled>코멘토 쇼핑</NavigationStyled>
+      <NavigationStyled>{title}</NavigationStyled>
     </NavigationCoverStyled>
   );
 };

@@ -28,7 +28,7 @@ const ProductDetail = () => {
   });
   return (
     <Cover>
-      <Navigation />
+      <Navigation title={"코멘토 쇼핑"} />
       <ProductDetailStyled>
         {product && <ProductBigCard key={product.id} title={product.name} desc={`${product.price}원`} thumbnail={product.thumbnail} width="390px" />}
       </ProductDetailStyled>
