@@ -17,7 +17,6 @@ const NavigationCoverStyled = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 15px;
   margin-left: -40px;
 `;
 const BackPage = styled.div`
