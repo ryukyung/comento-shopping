@@ -55,7 +55,7 @@ const ProductDetail = () => {
           <div>리뷰가 없습니다.</div>
         )}
       </ReviewCover> */}
-      <BasketButtonStyled />
+      <BasketButtonStyled title={"장바구니 담기"} />
     </Cover>
   );
 };

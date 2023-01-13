@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const BasketButton = () => {
-  return <BasketButtonStyled>장바구니 담기</BasketButtonStyled>;
+const BasketButton = ({ title }) => {
+  return <BasketButtonStyled>{title}</BasketButtonStyled>;
 };
 const BasketButtonStyled = styled.div`
   width: 100%;
