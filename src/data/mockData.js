@@ -60,7 +60,11 @@ export const getProductDetail = (productId) => {
     return product.id === Number(productId);
   });
 };
-
+export const getReviewDetail = (reviewId) => {
+  return [...mockReviews].find((review) => {
+    return review.id === Number(reviewId);
+  });
+};
 export const mockReviews = [
   {
     id: 1,
