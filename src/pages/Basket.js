@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { useState } from "react";
 import Navigation from "../components/Navigation.jsx";
-import BasketProduct from "../components/BasketProduct.js";
-import BasketButtonStyled from "../components/BasketButton.js";
-import PriceBox from "../components/PriceBox.js";
+import BasketProduct from "../components/BasketProduct.jsx";
+import BasketButtonStyled from "../components/BasketButton.jsx";
+import PriceBox from "../components/PriceBox.jsx";
 import Modal from "../components/Modal";
 const Basket = () => {
   return (
