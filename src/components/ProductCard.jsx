@@ -11,6 +11,7 @@ const ProductCard = ({ thumbnail, title, desc, onClick }) => {
 
 const ProductCardStyled = styled.div`
   padding: 50px 24px;
+  cursor: pointer;
 `;
 const ProductThumbnail = styled.div`
   width: 341px;
