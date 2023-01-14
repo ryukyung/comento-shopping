@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-const ProductButton = ({ ButtonDesc, bgColor, fontWeight }) => {
-  return <ProductButtonStyled style={{ backgroundColor: bgColor, fontWeight: fontWeight }}>{ButtonDesc}</ProductButtonStyled>;
+const ProductButton = ({ ButtonDesc, active, onClick }) => {
+  return (
+    <ProductButtonStyled onClick={onClick} active={active}>
+      {ButtonDesc}
+    </ProductButtonStyled>
+  );
 };
 const ProductButtonStyled = styled.div`
   width: 50%;
@@ -10,5 +14,7 @@ const ProductButtonStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  background-color: ${(props) => (props.active ? "#eee" : "#FFF")};
 `;
 export default ProductButton;

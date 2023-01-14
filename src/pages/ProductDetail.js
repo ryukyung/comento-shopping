@@ -1,33 +1,37 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { getProductDetail } from "../data/mockData";
 import Navigation from "../components/Navigation.jsx";
 import ProductBigCard from "../components/ProductBigCard.jsx";
 import ProductButton from "../components/ProductButton.jsx";
 import ProductDetailImgStyled from "../components/ProductDetailImg.jsx";
-import BasketButtonStyled from "../components/BasketButton.js";
+import BasketButtonStyled from "../components/BasketButton.jsx";
 import Review from "../components/Review";
 import { useNavigate } from "react-router-dom";
 
-// import { getProductDetail, mockReviews } from "../data/mockData";
-import { getReviewDetail, mockReviews } from "../data/mockData";
+import { getProductDetail, mockReviews } from "../data/mockData";
 const ProductDetail = () => {
   let { productId } = useParams();
   const [product, setProduct] = useState();
-  let { reviewId } = useParams();
-  const [reviews, setReview] = useState();
+  const [reviews, setReviews] = useState();
   const navigate = useNavigate();
+  const [currentMenu, setCurrentMenu] = useState("desc");
 
   useEffect(() => {
     const result = getProductDetail(productId);
     setProduct(result);
   }, []);
+
   useEffect(() => {
     setTimeout(() => {
-      setReview(mockReviews);
+      setReviews(mockReviews);
     }, 1000);
-  });
+  }, []);
+
+  const onClickMenu = (menuName) => {
+    setCurrentMenu(menuName);
+  };
+
   return (
     <Cover>
       <Navigation title={"코멘토 쇼핑"} />
@@ -35,15 +39,13 @@ const ProductDetail = () => {
         {product && <ProductBigCard key={product.id} title={product.name} desc={`${product.price}원`} thumbnail={product.thumbnail} width="390px" />}
       </ProductDetailStyled>
       <ButtonCover>
-        {/* <ProductButton ButtonDesc={"상품 설명"} bgColor="#eee" fontWeight="700" onClick={() => onClickMenu(1)} />
-        <ProductButton ButtonDesc={"상품 후기"} bgColor="#fff" fontWeight="500" onClick={() => onClickMenu(2)} /> */}
-        <ProductButton ButtonDesc={"상품 설명"} bgColor="#eee" fontWeight="700" />
-        <ProductButton ButtonDesc={"상품 후기"} bgColor="#fff" fontWeight="500" />
+        <ProductButton ButtonDesc={"상품 설명"} active={currentMenu === "desc"} onClick={() => onClickMenu("desc")} />
+        <ProductButton ButtonDesc={"상품 후기"} active={currentMenu === "review"} onClick={() => onClickMenu("review")} />
       </ButtonCover>
-      {/* {product && <ProductDetailImgStyled key={product.id} detailImg={product.mainImage} />} */}
-      <ReviewCover>
-        {reviews ? (
-          reviews.map((review) => (
+      {currentMenu === "desc" && product && <ProductDetailImgStyled key={product.id} detailImg={product.mainImage} />}
+      {currentMenu === "review" && (
+        <ReviewCover>
+          {reviews.map((review) => (
             <Review
               key={review.id}
               name={review.username}
@@ -52,11 +54,9 @@ const ProductDetail = () => {
               profileImg={review.profileImage}
               desc={review.reviewText}
             />
-          ))
-        ) : (
-          <div>리뷰가 없습니다.</div>
-        )}
-      </ReviewCover>
+          ))}
+        </ReviewCover>
+      )}
       <BasketButtonStyled title={"장바구니 담기"} onClick={() => navigate(`/basket`)} />
     </Cover>
   );
