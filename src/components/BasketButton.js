@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const BasketButton = ({ title }) => {
-  return <BasketButtonStyled>{title}</BasketButtonStyled>;
+const BasketButton = ({ title, onClick }) => {
+  return <BasketButtonStyled onClick={onClick}>{title}</BasketButtonStyled>;
 };
 const BasketButtonStyled = styled.div`
   width: 100%;
@@ -13,5 +13,6 @@ const BasketButtonStyled = styled.div`
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
+  cursor: pointer;
 `;
 export default BasketButton;

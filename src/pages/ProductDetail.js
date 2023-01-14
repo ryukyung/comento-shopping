@@ -8,19 +8,21 @@ import ProductButton from "../components/ProductButton.jsx";
 import ProductDetailImgStyled from "../components/ProductDetailImg.jsx";
 import BasketButtonStyled from "../components/BasketButton.js";
 import Review from "../components/Review";
+import { useNavigate } from "react-router-dom";
+
 // import { getProductDetail, mockReviews } from "../data/mockData";
 import { getReviewDetail, mockReviews } from "../data/mockData";
-// ProductDetail
 const ProductDetail = () => {
   let { productId } = useParams();
   const [product, setProduct] = useState();
+  let { reviewId } = useParams();
+  const [reviews, setReview] = useState();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const result = getProductDetail(productId);
     setProduct(result);
   }, []);
-  // review
-  let { reviewId } = useParams();
-  const [reviews, setReview] = useState();
   useEffect(() => {
     setTimeout(() => {
       setReview(mockReviews);
@@ -38,8 +40,8 @@ const ProductDetail = () => {
         <ProductButton ButtonDesc={"상품 설명"} bgColor="#eee" fontWeight="700" />
         <ProductButton ButtonDesc={"상품 후기"} bgColor="#fff" fontWeight="500" />
       </ButtonCover>
-      {product && <ProductDetailImgStyled key={product.id} detailImg={product.mainImage} />}
-      {/* <ReviewCover>
+      {/* {product && <ProductDetailImgStyled key={product.id} detailImg={product.mainImage} />} */}
+      <ReviewCover>
         {reviews ? (
           reviews.map((review) => (
             <Review
@@ -54,8 +56,8 @@ const ProductDetail = () => {
         ) : (
           <div>리뷰가 없습니다.</div>
         )}
-      </ReviewCover> */}
-      <BasketButtonStyled title={"장바구니 담기"} />
+      </ReviewCover>
+      <BasketButtonStyled title={"장바구니 담기"} onClick={() => navigate(`/basket`)} />
     </Cover>
   );
 };
