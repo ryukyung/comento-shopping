@@ -31,7 +31,6 @@ const ProductDetail = () => {
   const onClickMenu = (menuName) => {
     setCurrentMenu(menuName);
   };
-
   return (
     <Cover>
       <Navigation title={"코멘토 쇼핑"} />
@@ -57,7 +56,7 @@ const ProductDetail = () => {
           ))}
         </ReviewCover>
       )}
-      <BasketButtonStyled title={"장바구니 담기"} onClick={() => navigate(`/basket`)} />
+      <BasketButtonStyled title={"장바구니 담기"} onClick={() => navigate("/Basket")} />
     </Cover>
   );
 };
