@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard.jsx";
 import styled from "styled-components";
 import { mockTheme1Products, mockTheme2Products } from "../data/mockData.js";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 const Home = () => {
   // state, 상태
   const [products, setProducts] = useState();
@@ -17,11 +17,25 @@ const Home = () => {
       setProducts(mockTheme2Products);
     }
   };
+
   useEffect(() => {
     setTimeout(() => {
       setProducts(mockTheme1Products);
     }, 1000);
   }, []);
+
+  const addCart = (product) => {
+    const newProduct = { thumbnail: product.thumbnail, name: product.name, price: product.price };
+    let basket = JSON.parse(localStorage.getItem("Basket"));
+    if (basket === null) basket = [];
+    basket.push(newProduct);
+    localStorage.setItem("Basket", JSON.stringify(basket));
+  };
+  const ProductCardClick = (product) => {
+    navigate(`product/${product.id}`);
+    addCart(product);
+  };
+
   return (
     <Cover>
       <Navigation title={"코멘토 쇼핑"} />
@@ -34,7 +48,7 @@ const Home = () => {
         {products ? (
           products.map((product) => (
             <ProductCard
-              onClick={() => navigate(`product/${product.id}`)}
+              onClick={() => ProductCardClick(product)}
               key={product.id}
               title={product.name}
               desc={product.description}
