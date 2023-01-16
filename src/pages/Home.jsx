@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard.jsx";
 import styled from "styled-components";
 import { mockTheme1Products, mockTheme2Products } from "../data/mockData.js";
 import { useState, useEffect } from "react";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
   // state, 상태
   const [products, setProducts] = useState();
@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <Cover>
-      <Navigation title={"코멘토 쇼핑"} />
+      <Navigation isMain={true} title={"코멘토 쇼핑"} />
       <ThemeSection>
         <ThemeButton themeName={"# 따순머그컵"} onClick={() => onClickThemeButton(1)} />
         <ThemeButton themeName={"# 여름엔바로"} onClick={() => onClickThemeButton(2)} />
