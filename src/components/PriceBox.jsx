@@ -1,40 +1,23 @@
 import styled from "styled-components";
 
-// const PriceBox = ({ number, price, sale, delivery, total }) => {
-const PriceBox = () => {
+const PriceBox = ({ number, price, total }) => {
   return (
     <PriceBoxStyled>
-      {/* <PriceInfo>
+      <PriceInfo>
         <p>상품금액({number}개)</p>
-        <p>{price}원</p>
+        <p>{price} 원</p>
       </PriceInfo>
       <PriceInfo>
         <p>할인금액</p>
-        <p>-{sale}원</p>
+        <p>- 0 원</p>
       </PriceInfo>
       <PriceInfo>
         <p>배송비</p>
-        <p>{delivery}원</p>
+        <p>0 원</p>
       </PriceInfo>
       <TotalInfo>
         <p>총 주문금액</p>
         <TotalPrice>{total}원</TotalPrice>
-      </TotalInfo> */}
-      <PriceInfo>
-        <p>상품금액(1개)</p>
-        <p>599,000원</p>
-      </PriceInfo>
-      <PriceInfo>
-        <p>할인금액</p>
-        <p>-450,000원</p>
-      </PriceInfo>
-      <PriceInfo>
-        <p>배송비</p>
-        <p>0원</p>
-      </PriceInfo>
-      <TotalInfo>
-        <p>총 주문금액</p>
-        <TotalPrice>149,000원</TotalPrice>
       </TotalInfo>
     </PriceBoxStyled>
   );

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-const BasketProduct = () => {
+const BasketProduct = ({ img, name, price }) => {
   return (
     <BasketProductStyled>
-      <ProductImg />
+      <ProductImg style={{ backgroundImage: `url(${img})` }} />
       <ProductInfo>
-        <ProductName>비숑 블랙 머그잔</ProductName>
-        <ProductPrice>21800원</ProductPrice>
+        <ProductName>{name}</ProductName>
+        <ProductPrice>{price}원</ProductPrice>
       </ProductInfo>
       <ProductDelete>X</ProductDelete>
     </BasketProductStyled>
@@ -19,12 +19,11 @@ const BasketProductStyled = styled.div`
   justify-content: space-between;
   align-content: center;
   padding: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
 `;
 const ProductImg = styled.div`
   width: 115px;
   height: 115px;
-  background-image: url("https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
