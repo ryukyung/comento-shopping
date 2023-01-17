@@ -1,24 +1,28 @@
 import styled from "styled-components";
 
-const Modal = ({}) => {
+const Modal = ({ onClick }) => {
   return (
     <ModalStyled>
       <ModalCover>
         <ModalTitle>주문되었습니다.</ModalTitle>
-        <ModalButton>확인</ModalButton>
+        <ModalButton onClick={onClick}>확인</ModalButton>
       </ModalCover>
     </ModalStyled>
   );
 };
 
 const ModalStyled = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 390px;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 50;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 10;
 `;
 const ModalCover = styled.div`
   width: 240px;
@@ -48,6 +52,7 @@ const ModalButton = styled.div`
   border-radius: 4px;
   font-weight: 400;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 export default Modal;
