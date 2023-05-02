@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+### comento-shopping
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[comento-shopping](https://ryukyung.github.io/comento-shopping/)
 
-## Available Scripts
+### 📝 Description
 
-In the project directory, you can run:
+'스타트업 프론트엔드 개발자로 실무 체험하기' 주제로 5주 동안 멘토링을 들으며 만들었던 페이지입니다. 기획서와 디자인을 확인해 API 명세서 초안을 만들고 가짜 서버와 API를 만들어 데이터를 불러온다. 디자인 시안을 확인하여 UI를 개발합니다.
 
-### `npm start`
+### 🔍 Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![comento3](./readmeImg/comento3.png)
+![comento1](./readmeImg/comento1.png)
+![comento2](./readmeImg/comento2.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **🧰 Tools**
 
-### `npm test`
+<p align="center">
+    <img src="https://img.shields.io/badge/React.js-blue?style=flat&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/GitHub-100000?logo=github" />
+  <img src= "https://img.shields.io/badge/Git-FF4500?logo=git&logoColor=white"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</p>
